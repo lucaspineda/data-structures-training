@@ -54,14 +54,6 @@ class LinkedList:
         self.length += 1
         return None
 
-    ## WRITE PREPEND METHOD HERE ##
-    #                             #
-    #                             #
-    #                             #
-    #                             #
-    ###############################
-
-
 
 
 my_linked_list = LinkedList(2)

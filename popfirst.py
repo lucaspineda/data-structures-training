@@ -68,16 +68,6 @@ class LinkedList:
             self.length -= 1
             return current_head
         return None
-        
-    ## WRITE POP_FIRST METHOD HERE ##
-    #                               #
-    #                               #
-    #                               #
-    #                               #
-    #################################
-
-
-
 
 my_linked_list = LinkedList(2)
 my_linked_list.append(1)
