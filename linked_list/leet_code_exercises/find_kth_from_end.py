@@ -35,17 +35,6 @@ def find_kth_from_end(linked_list, k):
     return slow
 
 
-#### WRITE FIND_KTH_FROM_END FUNCTION HERE ####
-#                                             #
-#    This is a separate function that is      #
-#    not a method within the                  #
-#    LinkedList class.                        #
-#    INDENT ALL THE WAY TO THE LEFT.          #
-#                                             #
-###############################################
-
-
-
 my_linked_list = LinkedList(1)
 my_linked_list.append(2)
 my_linked_list.append(3)
