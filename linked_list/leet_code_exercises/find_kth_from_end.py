@@ -22,7 +22,19 @@ class LinkedList:
         return True
   
   
-        
+def find_kth_from_end(linked_list, k):
+    slow = linked_list.head
+    fast = linked_list.head
+    for _ in range(k):
+        if fast is None:
+            return None
+        fast = fast.next
+    while fast:
+        slow = slow.next
+        fast = fast.next
+    return slow
+
+
 #### WRITE FIND_KTH_FROM_END FUNCTION HERE ####
 #                                             #
 #    This is a separate function that is      #
@@ -34,7 +46,6 @@ class LinkedList:
 
 
 
-
 my_linked_list = LinkedList(1)
 my_linked_list.append(2)
 my_linked_list.append(3)
@@ -42,9 +53,10 @@ my_linked_list.append(4)
 my_linked_list.append(5)
 
 
-k = 2
+k = 5
 result = find_kth_from_end(my_linked_list, k)
 
+print(result, 'resultt')  # Output: 4
 print(result.value)  # Output: 4
 
 
