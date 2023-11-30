@@ -30,6 +30,30 @@ class LinkedList:
         self.head = None
         self.tail = None
         self.length = 0
+
+    def partition_list(self, x):
+        temp = self.head
+        small_list = LinkedList(0)
+        greater_list = LinkedList(0)
+        small_list.make_empty()
+        greater_list.make_empty()
+        self.head = None
+        dummy1 = Node(0)
+        dummy2 = Node(0)
+        previous1 = dummy1
+        previous2 = dummy2
+        while (temp):
+            if temp.value < x:
+                previous1.next = temp
+                previous1 = temp
+            elif temp.value >= x:
+                previous2.next = temp
+                previous2 = temp
+            temp = temp.next
+        previous1.next = None
+        previous2.next = None
+        previous1.next = dummy2.next
+        self.head = dummy1.next
         
 #   +===================================================+
 #   |               WRITE YOUR CODE HERE                |
