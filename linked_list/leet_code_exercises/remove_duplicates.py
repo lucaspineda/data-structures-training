@@ -32,7 +32,20 @@ class LinkedList:
             print(" -> ".join(values))
 
     def remove_duplicates(self):
-        
+        current = self.head
+        previous = None
+        list = set()
+        while current:
+            list.add(current.value)
+            current = current.next
+        for val in list:
+            new_node = Node(val)
+            if previous is None:
+                self.head = new_node
+            else:
+                previous.next = new_node
+            previous = new_node
+
 
     #   +===================================================+
     #   |                  WRITE YOUR CODE HERE             |
