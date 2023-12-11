@@ -30,6 +30,13 @@ class DoublyLinkedList:
         self.length += 1
         return True
 
+    def swap_first_last(self):
+        if self.length == 0:
+            return None
+        temp1 = self.head.value
+        temp2 = self.tail.value
+        self.head.value = temp2
+        self.tail.value = temp1
     # WRITE SWAP_FIRST_LAST METHOD HERE #
     #                                   #
     #                                   #
