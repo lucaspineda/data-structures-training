@@ -61,20 +61,13 @@ class DoublyLinkedList:
             if next_current:
                 current = next_current
 
-    # WRITE SWAP_PAIRS METHOD HERE #
-    #                              #
-    #                              #
-    #                              #
-    #                              #
-    ################################
-
 
 
 my_dll = DoublyLinkedList(1)
-# my_dll.append(2)
-# my_dll.append(3)
-# my_dll.append(4)
-# my_dll.append(5)
+my_dll.append(2)
+my_dll.append(3)
+my_dll.append(4)
+my_dll.append(5)
 
 
 print('my_dll before swap_pairs:')
