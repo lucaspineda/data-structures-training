@@ -31,6 +31,35 @@ class DoublyLinkedList:
             new_node.prev = temp
         self.length += 1
         return True
+    
+    def swap_pairs(self):
+        current = self.head
+        last = None
+        next_current = None
+        range_value = round(self.length // 2)
+        if (self.length % 2) != 0:
+            range_value += 1
+        if self.length == 1:
+            return
+        for _ in range(range_value):
+            if not current.next:
+                last.next = current
+                current.prev = last
+                return
+            after = current.next
+            current.prev = after
+            if after.next:
+                next_current = after.next
+            after.next = current
+            if last:
+                last.next = after
+            else:
+                self.head = after
+            current.next = None
+            after.prev = last
+            last = current
+            if next_current:
+                current = next_current
 
     # WRITE SWAP_PAIRS METHOD HERE #
     #                              #
@@ -42,9 +71,11 @@ class DoublyLinkedList:
 
 
 my_dll = DoublyLinkedList(1)
-my_dll.append(2)
-my_dll.append(3)
-my_dll.append(4)
+# my_dll.append(2)
+# my_dll.append(3)
+# my_dll.append(4)
+# my_dll.append(5)
+
 
 print('my_dll before swap_pairs:')
 my_dll.print_list()
