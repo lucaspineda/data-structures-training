@@ -22,14 +22,6 @@ class Stack:
         self.top = new_node
         self.height += 1
 
-    ### WRITE PUSH METHOD HERE ###
-    #                            #
-    #                            #
-    #                            #
-    #                            #
-    ##############################
-
-
 
 
 my_stack = Stack(2)
