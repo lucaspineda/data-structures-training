@@ -27,28 +27,50 @@ class Stack:
         else:
             return self.stack_list.pop()
 
-def sort_stack():
-    
+# def sort_stack(stack):
+#     sorted_stack = Stack()
+#     print(stack.print_stack(), 'olha o print')
+#     while not stack.is_empty():
+#         temp = stack.pop()
+#         last_element = sorted_stack.peek()
+#         print('foi')
+#         while not sorted_stack.is_empty() and last_element > temp:
+#             print(last_element, temp, 'olh aqui')
+#             stack.push(sorted_stack.pop())
+#         sorted_stack.push(temp)
+#     while not sorted_stack.is_empty():
+#         stack.push(sorted_stack.pop())
+#     return sorted_stack
 
 
-##### WRITE SORT_STACK FUNCTION HERE #####
-#                                        #
-#  This is a separate function that is   #
-#  not a method within the Stack class.  #
-#                                        #
-#  <- INDENT ALL THE WAY TO THE LEFT <-  #
-#                                        #
-##########################################
 
 
 
+
+
+
+def sort_stack(stack):
+    sorted_stack = Stack()
+    while not stack.is_empty():
+        temp = stack.pop()
+        peek_element = sorted_stack.peek()
+        while not sorted_stack.is_empty() and peek_element > temp:
+            stack.push(sorted_stack.pop())
+        sorted_stack.push(temp)
+    while not sorted_stack.is_empty():
+        stack.push(sorted_stack.pop())
 
 my_stack = Stack()
-my_stack.push(3)
-my_stack.push(1)
-my_stack.push(5)
-my_stack.push(4)
+# my_stack.push(3)
+# my_stack.push(1)
+# my_stack.push(5)
+# my_stack.push(4)
+# my_stack.push(2)
+
 my_stack.push(2)
+my_stack.push(4)
+my_stack.push(3)
+
 
 print("Stack before sort_stack():")
 my_stack.print_stack()
