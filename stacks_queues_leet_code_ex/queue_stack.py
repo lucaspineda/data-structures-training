@@ -3,6 +3,14 @@ class MyQueue:
         self.stack1 = []
         self.stack2 = []
         
+    def enqueue(self, value):
+        s1 = self.stack1
+        s2 = self.stack2
+        while not len(s1) == 0:
+            s2.append(s1.pop())
+        s1.append(value)
+        while not len(s2) == 0:
+            s1.append(s2.pop())
     # WRITE ENQUEUE MEHTOD HERE #
     #                           #
     #                           #
