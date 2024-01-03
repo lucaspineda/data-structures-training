@@ -5,7 +5,15 @@
 #                                    #
 ######################################
 
-
+def group_anagrams(strings):
+    anagram_groups = {}
+    for item in strings:
+        canonical = ''.join(sorted(item))
+        if canonical in anagram_groups:
+            anagram_groups[canonical].append(item)
+        else:
+            anagram_groups[canonical] = [item]
+    return list(anagram_groups.values())
 
 
 print("1st set:")
