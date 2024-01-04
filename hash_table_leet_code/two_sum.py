@@ -6,25 +6,34 @@
 ###############################
     
     
-def two_sum(num_array, target):
-    numbers_dict = {}
-    first_number_index = None
-    second_number_index = None
-    i = 0
-    for number in num_array:
-        numbers_dict[number] = i
-        i += 1
-    for index, number_item in enumerate(numbers_dict):
-        second_number = target - number_item
-        if second_number != number_item:
-            if second_number in numbers_dict:
-                first_number_index = index
-                second_number_index = numbers_dict.get(second_number)
-                break
-    if first_number_index is not None:
-        return [first_number_index, second_number_index]
-    else:
-        return []
+# def two_sum(num_array, target):
+#     numbers_dict = {}
+#     first_number_index = None
+#     second_number_index = None
+#     i = 0
+#     for number in num_array:
+#         numbers_dict[number] = i
+#         i += 1
+#     for index, number_item in enumerate(numbers_dict):
+#         second_number = target - number_item
+#         if second_number != number_item:
+#             if second_number in numbers_dict:
+#                 first_number_index = index
+#                 second_number_index = numbers_dict.get(second_number)
+#                 break
+#     if first_number_index is not None:
+#         return [first_number_index, second_number_index]
+#     else:
+#         return []
+
+def two_sum(nums, target):
+    num_map = {}
+    for i, num in enumerate(nums):
+        complement = target - num
+        if complement in num_map:
+            return [num_map[complement], i]
+        num_map[num] = i
+    return []
     
 print(two_sum([5, 1, 7, 2, 9, 3], 10))  
 print(two_sum([4, 2, 11, 7, 6, 3], 9))  
