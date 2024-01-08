@@ -6,6 +6,9 @@
 #########################################
 
 
+def remove_duplicates(numbers_list):
+    set_list = set(numbers_list)
+    return list(set_list)
 
 my_list = [1, 2, 3, 4, 1, 2, 5, 6, 7, 3, 4, 8, 9, 5]
 new_list = remove_duplicates(my_list)
