@@ -38,7 +38,8 @@ class MaxHeap:
             if (right_index < len(self.heap) and 
                     self.heap[right_index] > self.heap[max_index]):
                 max_index = right_index
-
+            
+            print(max_index, index, 'aaaa')
             if max_index != index:
                 self._swap(index, max_index)
                 index = max_index
@@ -69,23 +70,24 @@ class MaxHeap:
     
     
 myheap = MaxHeap()
+myheap.insert(99)
 myheap.insert(95)
-myheap.insert(75)
 myheap.insert(80)
 myheap.insert(55)
 myheap.insert(60)
 myheap.insert(50)
-myheap.insert(65)
+myheap.insert(100)
 
 print(myheap.heap)
 
 
-myheap.remove()
+# myheap.remove()
+myheap._sink_down(0)
 
 print(myheap.heap)
 
 
-myheap.remove()
+# myheap.remove()
 
 print(myheap.heap)
 
