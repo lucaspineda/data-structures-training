@@ -39,6 +39,14 @@ class BinarySearchTree:
                 traverse(current_node.right)          
         traverse(self.root)
         return results
+    
+    def is_valid_bst(self):
+        results = self.dfs_in_order()
+        for index in range(len(results) - 1):
+            next = results[index + 1]
+            if results[index] > next:
+                return False
+        return True
         
     # WRITE IS_VALID_BST METHOD HERE #
     #                                #
