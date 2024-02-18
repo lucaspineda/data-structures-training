@@ -20,6 +20,15 @@ def merge(array1, array2):
 
     return combined
 
+def merge_sort(my_list):
+    if len(my_list) == 1:
+        return my_list
+    mid_index = round(len(my_list) / 2)
+    left = my_list[0:mid_index]
+    right = my_list[mid_index:]
+    left_sorted = merge_sort(left)
+    right_sorted = merge_sort(right)
+    return merge(left_sorted, right_sorted)
 
 ## WRITE MERGE_SORT FUNCTION HERE ##
 #                                  #
