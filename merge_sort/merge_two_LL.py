@@ -36,17 +36,22 @@ class LinkedList:
     def merge(self, other_list):
         dummy = Node(0)
         current = dummy
-        node1 = self.head
-        node2 = other_list.head
-        while current:
-            if (node1.value < node2.value):
-                current = node1
-                node1 = node1.next
+        other_head = other_list.head
+        while self.head and other_head:
+            if self.head.value < other_head.value:
+                current.next = self.head
+                self.head = self.head.next
             else:
-                current.next = node2
-                node2 = node2.next
-
-            
+                current.next = other_head
+                other_head = other_head.next
+            current = current.next
+        if self.head is not None:
+            current.next = self.head
+        else:
+            current.next = other_head
+            self.tail = other_list.tail            
+        self.head = dummy.next
+        self.length += other_list.length            
     
 
 
@@ -60,6 +65,9 @@ l2 = LinkedList(2)
 l2.append(4)
 l2.append(6)
 l2.append(8)
+l2.append(10)
+l2.append(11)
+
 
 l1.merge(l2)
 
