@@ -27,6 +27,7 @@ function FindElementWithHighestFrequency(array) {
 }
 
 
+console.log(FindElementWithHighestFrequency([]))
 console.log(FindElementWithHighestFrequency([2,2,2,3,3]))
 console.log(FindElementWithHighestFrequency([2,5,5,5,5,5]))
 console.log(FindElementWithHighestFrequency([2,2,2,3,3,3]))
