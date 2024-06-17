@@ -1,50 +1,50 @@
 
-// function consecutiveSequence(matrix) {
-//   let consecutivesIndexes = [];
+function consecutiveSequence(matrix) {
+  let consecutivesIndexes = [];
 
-//   const rows = matrix[0].length
-//   const columns = matrix.length
-//   let currentConsecs = []
+  const rows = matrix[0].length
+  const columns = matrix.length
+  let currentConsecs = []
 
-//   for (let j = 0; j < rows; j++) {
-//     currentConsecs = [[0, j]]
-//     for (let i = 1; i < columns; i++) {
-//       if (matrix[i-1][j] + 1 === matrix[i][j]) {
-//         currentConsecs.push([i, j]);
-//         if (i === columns - 1 && currentConsecs.length >= 3) {
-//             consecutivesIndexes.push(currentConsecs)
-//         }
-//       } else {
-//         if (currentConsecs.length >= 3) {
-//             consecutivesIndexes.push(currentConsecs)
-//         }
-//         currentConsecs = [[i,j]];
-//       }
-//     }
-//   }
+  for (let j = 0; j < rows; j++) {
+    currentConsecs = [[0, j]]
+    for (let i = 1; i < columns; i++) {
+      if (matrix[i-1][j] + 1 === matrix[i][j]) {
+        currentConsecs.push([i, j]);
+        if (i === columns - 1 && currentConsecs.length >= 3) {
+            consecutivesIndexes.push(currentConsecs)
+        }
+      } else {
+        if (currentConsecs.length >= 3) {
+            consecutivesIndexes.push(currentConsecs)
+        }
+        currentConsecs = [[i,j]];
+      }
+    }
+  }
 
-//   for (let i = 0; i < columns; i++) {
-//     currentConsecs = [[i, 0]]
-//     for (let j = 1; j < rows; j++) {
-//       if (matrix[i][j - 1] + 1 === matrix[i][j]) {
-//         currentConsecs.push([i, j]);
-//         if (j === rows - 1 && currentConsecs.length >= 3) {
-//             consecutivesIndexes.push(currentConsecs)
-//         }
-//       } else {
-//         if (currentConsecs.length >= 3) {
-//             consecutivesIndexes.push(currentConsecs)
-//         }
-//         currentConsecs = [[i,j]];
-//       }
-//     }
-//   }
-//   flatenConsecutivesIndexes = consecutivesIndexes.flat()
-//   for (let i = 0; i < flatenConsecutivesIndexes.length; i++) {
-//     matrix[flatenConsecutivesIndexes[i][0]][flatenConsecutivesIndexes[i][1]] = 0
-//   }
-//   console.log(matrix) // return
-// }
+  for (let i = 0; i < columns; i++) {
+    currentConsecs = [[i, 0]]
+    for (let j = 1; j < rows; j++) {
+      if (matrix[i][j - 1] + 1 === matrix[i][j]) {
+        currentConsecs.push([i, j]);
+        if (j === rows - 1 && currentConsecs.length >= 3) {
+            consecutivesIndexes.push(currentConsecs)
+        }
+      } else {
+        if (currentConsecs.length >= 3) {
+            consecutivesIndexes.push(currentConsecs)
+        }
+        currentConsecs = [[i,j]];
+      }
+    }
+  }
+  flatenConsecutivesIndexes = consecutivesIndexes.flat()
+  for (let i = 0; i < flatenConsecutivesIndexes.length; i++) {
+    matrix[flatenConsecutivesIndexes[i][0]][flatenConsecutivesIndexes[i][1]] = 0
+  }
+  console.log(matrix) // return
+}
 
 matrix = [
   [1, 2, 3, 4],
