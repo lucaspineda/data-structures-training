@@ -12,19 +12,16 @@ function TreeNode(val, left, right) {
 var inorderTraversal = function(root) {
     result = []
 
-    function inorder(current_node) {
-        if (current_node?.left) {
-            inorder(current_node.left)
-        }
-        console.log(current_node?.val)
-        result.push(current_node?.val)
-        console.log(result)
-
-        if (current_node?.right) {
-            inorder(current_node.right)
-        }
+    if (root?.left) {
+        inorderTraversal(root.left)
     }
-    inorder(root)
+    console.log(root?.val)
+    result.push(root?.val)
+    console.log(result)
+
+    if (root?.right) {
+        inorderTraversal(root.right)
+    }
     return result
     
     
