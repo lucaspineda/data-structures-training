@@ -24,7 +24,7 @@
             <a href="#contact">Contact</a>
             <a href="#about">About</a>
           </div>
-          <button class="nav-ul__menu-button" onclick="openMenu()">
+          <button class="nav-ul__menu-button" onclick="toggleMenu() ">
             <i class="fa fa-bars fa-2x"></i>
           </button>
         </ul>
@@ -33,7 +33,7 @@
     <nav class="mobile-menu hidden">
       <div class="mobile-menu__top-wrapper">
         <img src="./images/logo.png" alt="Company logo" />
-        <button>
+        <button onclick="toggleMenu()">
           <i class="fa fa-times fa-2x"></i>
         </button>
       </div>

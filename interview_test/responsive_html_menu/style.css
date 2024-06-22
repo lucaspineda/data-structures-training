@@ -24,13 +24,14 @@ a {
 }
 
 .hidden {
-  display: none
+  display: none !important;
 
 }
 
 header {
-  padding: 2rem 4rem;
+  padding: 2rem;
 }
+
 
 .nav-ul {
   display: flex;
@@ -60,13 +61,14 @@ header {
   }
 }
 
+
 .mobile-menu {
   background-color: aquamarine;
   position: absolute;
   width: 100vw;
   height: 100vh;
   top: 0;
-  padding: 2rem 2rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
 
