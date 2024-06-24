@@ -46,7 +46,7 @@ function consecutiveSequence(matrix) {
   console.log(matrix) // return
 }
 
-matrix = [
+matrix1 = [
   [1, 2, 3, 4],
   [2, 5, 4, 1],
   [3, 6, 5, 1],
@@ -66,7 +66,7 @@ matrix = [
 //     [3, 6],
 //   ];
 
-consecutiveSequence(matrix)
+consecutiveSequence(matrix1)
 
 function consecutiveArray(array) {
   consecIndexes = [];
@@ -95,6 +95,17 @@ function consecutiveArray(array) {
   console.log(array, "consecc");
 }
 
+matrix2 = [
+  [1, 2, 3, 4],
+  [2, 5, 4, 1],
+  [3, 6, 5, 1],
+  [5, 6, 5, 1],
+  [4, 6, 5, 1],
+  [5, 6, 5, 1],
+  [6, 6, 5, 1],
+];
+
+consecutiveArray(matrix2)
 
 
 
