@@ -21,4 +21,25 @@ var twoSum = function(nums, target) {
     
 };
 
-console.log(twoSum([11,15,2,7], 9))
+
+
+// console.log(twoSum([11,15,2,7], 9))
+
+
+var twoSumOptmized = function(nums, target) {
+    
+    const numsHash = new Map()
+
+    nums.forEach((num, index) => {
+        numsHash.set(num, index)
+    })
+    console.log(numsHash)
+    for (let i = 0; i < nums.length; i++) {
+        const currentDifference = target - nums[i]
+        if(numsHash.has(currentDifference) && numsHash.get(currentDifference) !== i) {
+            return [i, numsHash.get(currentDifference)]
+        }
+    }
+};
+
+console.log(twoSumOptmized([3,3], 6))
