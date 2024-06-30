@@ -43,3 +43,4 @@ var twoSumOptmized = function(nums, target) {
 };
 
 console.log(twoSumOptmized([3,3], 6))
+console.log(twoSumOptmized([3,3,4,5], 6))
