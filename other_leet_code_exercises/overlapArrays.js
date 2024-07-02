@@ -2,8 +2,12 @@
 
 function mergeCollections(collections) {
     const unsortedResult = []
+    const mapOccurence = new Map()
 
     for (let i = 0; i < collections.length; i++) {
+        if (mapOccurence.has(i)) {
+            continue
+        }
         currentItem = collections[i]
         console.log(currentItem, 'currentItem')
         let itemMerged = false
@@ -21,7 +25,7 @@ function mergeCollections(collections) {
                 }
                 unsortedResult.push(collections[j])
                 itemMerged = true
-                i++
+                mapOccurence.set(j, true)
                 break
             }
         }
@@ -35,4 +39,4 @@ function mergeCollections(collections) {
 
 
 
-console.log(mergeCollections([[1,4],[2,4],[5,7],[6,11],[12,14]]))
+console.log(mergeCollections([[1,4],[5,7],[2,4],[6,11],[12,14]]))
